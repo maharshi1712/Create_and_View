@@ -1,0 +1,107 @@
+<html>
+
+    <head>
+        <link href="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.css" rel="stylesheet">
+        <link rel="shortcut icon" href="#">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" >
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <style>
+            body{
+                background: linear-gradient(to right, #6190e8, #a7bfe8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */            }
+            .container{
+                position: relative;
+                top: 40px;
+                height:800px;
+                width:1200px;
+                background-color:whitesmoke;
+                border-radius: 15px;
+                margin-bottom: 50px;
+            }
+            .form-control{
+                top:30px;
+            }
+            #mt{
+                position: relative;
+                top : 50px;
+                bottom: 50px;
+            }
+            #p1{
+                position: relative;
+                align-content: center;
+                left: 650px;
+                top : 40px;
+                font-size: 150%;
+                color: black;
+            }       
+        </style>
+    </head>
+    <body>
+        <p id="p1">All USER's DATA</p>
+        
+        <div class="container">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="myInput" onkeyup="myFunction()" placeholder="Serach by your Firstname . . ." aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+        
+            <table id="mt" class="table table-striped" data-toggle="table" >
+                <thead class="thead-light">
+                    <tr>
+                        <th>ID</th>
+                        <th data-field="Firstname">Firstname</th>
+                        <th data-field="Lastname">Lastname</th>
+                        <th data-field="Email">Email</th>
+                        <th data-field="DateOfBirth">DateOfBirth</th>
+                        <th data-field="Description">Description</th>
+                        <th>Edit/Delete</th>
+                    </tr>
+                </thead>    
+                <tbody>
+                    <% cnt=1; %>
+                    <% records.forEach(function(row) { %>
+                        <tr>
+                            <td><%= cnt %></td>
+                            <td><%= row.firstname %></td>
+                            <td><%= row.lastname %></td>
+                            <td><%= row.email %></td>
+                            <td><%= row.dob %></td>
+                            <td><%= row.bio %></td>
+                            <td><a href="/edit.ejs/<%= row._id %>"><button id="edit" class="btn btn-primary mb-3"><i class="fas fa-edit"></i></button></a><a href="/views.ejs/delete/<%= row._id %>"><button id="edit" class="btn btn-secondary mb-3"><i class="fas fa-trash"></i></button></a></td>
+                        </tr> 
+                        <% cnt++; %>
+                   <% }) %>
+                    
+                </tbody>
+            </table> 
+
+        </div>
+        
+        <script>
+            function myFunction() {
+              var input, filter, table, tr, td, i, txtValue;
+              input = document.getElementById("myInput");
+              filter = input.value.toUpperCase();
+              table = document.getElementById("mt");
+              tr = table.getElementsByTagName("tr");
+              for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                  txtValue = td.textContent || td.innerText;
+                  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                  } else {
+                    tr[i].style.display = "none";
+                  }
+                }       
+              }
+            }
+            </script>
+        <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet"> 
+        <style>
+            body{
+            background: #E6DADA;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #274046, #E6DADA);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #274046, #E6DADA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   
+
+}
+.container{
+    height: 300px;
+    width: 500px;
+    background-color:#043958;
+    margin-top: 200px;
+    border-radius: 20px;
+}
+.container h1{
+    font-size: 190%;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    padding-top: 50px;
+    color: whitesmoke;
+}
+#create{
+   position: relative;
+   left: 115px;
+   top:40px;
+}
+#view{
+    position: relative;
+    left:170px;
+    top: 40px;
+ }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>PRESONAL </br> INFORMATION</h1>
+           <a href="/form.hbs"><button type="button" id="create" class="btn btn-light btn-lg">Create</button></a> 
+            <a href="/views.ejs"><button type="button" id="view" class="btn btn-light btn-lg">View</button></a>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>
